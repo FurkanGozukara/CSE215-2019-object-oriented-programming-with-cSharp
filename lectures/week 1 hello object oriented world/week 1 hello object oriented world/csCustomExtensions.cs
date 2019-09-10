@@ -15,5 +15,13 @@ namespace myCustomMethodExtensions
                 return true;
             return false;
         }
+
+        public static int myCustomToInt(this string s)
+        {
+            int irOut = 0;
+            if (Int32.TryParse(s, out irOut) == true)
+                return irOut;
+            throw new System.ArgumentException("Given parameter is not an integer", "myCustomToInt");
+        }
     }
 }

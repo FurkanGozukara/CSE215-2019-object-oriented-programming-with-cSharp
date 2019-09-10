@@ -101,7 +101,27 @@ namespace week_1_hello_object_oriented_world
             }
             csStudent myStudent = new csStudent(_StudentName: txtStudentName.Text);
 
-            myStudent.irStudentId = txtStudentName.Text.myCustomToInt();
+            try
+            {
+                myStudent.irStudentId = txtStudentId.Text.myCustomToInt();
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show(E.Message.ToString());
+            }
+   
+            if(dicStudents.ContainsKey(myStudent.irStudentId))
+            {
+                MessageBox.Show("Error: This student Id already exists");
+                return;
+            }
+
+            dicStudents.Add(myStudent.irStudentId, myStudent);
+        }
+
+        private void refreshListBox()
+        {
+            lstStudentsList.Items.Clear();
 
 
         }
