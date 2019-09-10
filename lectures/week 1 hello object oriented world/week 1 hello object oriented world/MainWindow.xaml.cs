@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using myCustomMethodExtensions;
 
 namespace week_1_hello_object_oriented_world
 {
@@ -93,12 +94,16 @@ namespace week_1_hello_object_oriented_world
                 MessageBox.Show("Error: Please enter a valid student name");
                 return;
             }
-            if ( txtStudentName.Text[0])
+            if (txtStudentName.Text.Any(pr => pr.isInteger()) == true)
             {
                 MessageBox.Show("Error: Please enter a valid student name");
                 return;
             }
-            csStudent myStudent = new csStudent();
+            csStudent myStudent = new csStudent(_StudentName: txtStudentName.Text);
+
+            myStudent.irStudentId = txtStudentName.Text.myCustomToInt();
+
+
         }
     }
 }

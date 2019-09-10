@@ -4,13 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace week_1_hello_object_oriented_world
+namespace myCustomMethodExtensions
 {
     public static class csCustomExtensions
     {
         public static bool isInteger(this char c)
         {
-
+            int irOut = 0;
+            if (Int32.TryParse(c.ToString(), out irOut) == true)
+                return true;
+            return false;
         }
     }
 }
