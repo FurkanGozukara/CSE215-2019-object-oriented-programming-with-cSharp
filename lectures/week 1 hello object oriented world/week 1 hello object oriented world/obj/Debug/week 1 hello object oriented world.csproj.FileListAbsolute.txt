@@ -1,0 +1,15 @@
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\bin\Debug\week 1 hello object oriented world.exe.config
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\bin\Debug\week 1 hello object oriented world.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\bin\Debug\week 1 hello object oriented world.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world.csprojAssemblyReference.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\MainWindow.g.cs
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\App.g.cs
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world_MarkupCompile.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world_MarkupCompile.lref
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\MainWindow.baml
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world.g.resources
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week_1_hello_object_oriented_world.Properties.Resources.resources
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world.csproj.GenerateResource.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world.csproj.CoreCompileInputs.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world.pdb
