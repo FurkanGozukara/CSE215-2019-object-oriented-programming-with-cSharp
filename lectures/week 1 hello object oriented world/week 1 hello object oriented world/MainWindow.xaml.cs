@@ -117,13 +117,24 @@ namespace week_1_hello_object_oriented_world
             }
 
             dicStudents.Add(myStudent.irStudentId, myStudent);
+
+            refreshListBox();
         }
 
         private void refreshListBox()
         {
             lstStudentsList.Items.Clear();
 
+            dicStudents = dicStudents.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
 
+            foreach (var vrPerStudent in dicStudents.Values)
+            {
+                var vrValue = string.Format("Id: {0}\t{1}", vrPerStudent.irStudentId.ToString("N0"), vrPerStudent.srStudentName);
+                lstStudentsList.Items.Add(vrValue); 
+            }
+
+            //sort dictionary by student id first
+            //then add student information to the listbox
         }
     }
 }
