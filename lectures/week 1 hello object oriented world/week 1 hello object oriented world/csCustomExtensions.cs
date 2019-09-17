@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static week_1_hello_object_oriented_world.MainWindow;
 
 namespace myCustomMethodExtensions
 {
@@ -22,6 +23,18 @@ namespace myCustomMethodExtensions
             if (Int32.TryParse(s, out irOut) == true)
                 return irOut;
             throw new System.ArgumentException("Given parameter is not an integer", "myCustomToInt");
+        }
+
+        public static csStudent copyCsStudent(this csStudent myStudent)
+        {
+            csStudent tempStudent = new csStudent();
+            tempStudent.srStudentName = myStudent.srStudentName;
+            tempStudent.irStudentId = myStudent.irStudentId;
+
+            //this equals to above 3 line
+            return new csStudent(myStudent.irStudentId, myStudent.srStudentName);
+
+            return tempStudent;
         }
     }
 }

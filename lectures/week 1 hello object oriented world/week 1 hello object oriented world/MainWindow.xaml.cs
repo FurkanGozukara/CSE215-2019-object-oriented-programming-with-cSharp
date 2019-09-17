@@ -26,7 +26,7 @@ namespace week_1_hello_object_oriented_world
             InitializeComponent();
         }
 
-        private class csStudent
+        public class csStudent
         {
             public csStudent(int _studentId = 0, string _StudentName = "")
             {
@@ -44,7 +44,7 @@ namespace week_1_hello_object_oriented_world
             public string srStudentName = "";
         }
 
-        private class csLesson
+        public class csLesson
         {
             private int _irLessonId = 0;
 
@@ -101,6 +101,12 @@ namespace week_1_hello_object_oriented_world
             }
             csStudent myStudent = new csStudent(_StudentName: txtStudentName.Text);
 
+            csStudent myStudentCopy = new csStudent();
+
+            myStudentCopy = myStudent.copyCsStudent();
+
+            myStudentCopy.srStudentName = "test";
+
             try
             {
                 myStudent.irStudentId = txtStudentId.Text.myCustomToInt();
@@ -136,5 +142,7 @@ namespace week_1_hello_object_oriented_world
             //sort dictionary by student id first
             //then add student information to the listbox
         }
+
+     
     }
 }

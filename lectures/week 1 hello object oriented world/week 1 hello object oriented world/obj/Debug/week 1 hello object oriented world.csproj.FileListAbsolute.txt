@@ -13,3 +13,6 @@ C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello ob
 C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world.csproj.CoreCompileInputs.cache
 C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world.exe
 C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\week 1 hello object oriented world\week 1 hello object oriented world\obj\Debug\week 1 hello object oriented world.csproj.CopyComplete
