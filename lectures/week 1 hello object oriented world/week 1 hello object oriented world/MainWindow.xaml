@@ -11,6 +11,7 @@
         <TextBox Name="txtStudentName" HorizontalAlignment="Left" Height="23" Margin="245,34,0,0" TextWrapping="Wrap" Text="student name" VerticalAlignment="Top" Width="218"/>
         <TextBox Name="txtStudentId" HorizontalAlignment="Left" Height="23" Margin="30,34,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="202"/>
         <ListBox Name="lstStudentsList" HorizontalAlignment="Left" Height="291" Margin="30,89,0,0" VerticalAlignment="Top" Width="318"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="378,89,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

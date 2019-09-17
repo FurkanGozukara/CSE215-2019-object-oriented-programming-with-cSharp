@@ -42,6 +42,7 @@ namespace week_1_hello_object_oriented_world
 
             public int irStudentId = 0;
             public string srStudentName = "";
+            public List<csLesson> lstLessons = new List<csLesson>();
         }
 
         public class csLesson
@@ -103,6 +104,10 @@ namespace week_1_hello_object_oriented_world
 
             csStudent myStudentCopy = new csStudent();
 
+            myStudentCopy = csCustomExtensions.copyCsStudent(myStudent);
+
+            myStudentCopy = copyCsStudent(myStudent);
+
             myStudentCopy = myStudent.copyCsStudent();
 
             myStudentCopy.srStudentName = "test";
@@ -143,6 +148,27 @@ namespace week_1_hello_object_oriented_world
             //then add student information to the listbox
         }
 
-     
+
+        public csStudent copyCsStudent(csStudent myStudent)
+        {
+            csStudent tempStudent = new csStudent();
+            tempStudent.srStudentName = myStudent.srStudentName;
+            tempStudent.irStudentId = myStudent.irStudentId;
+
+            //this equals to above 3 line
+            return new csStudent(myStudent.irStudentId, myStudent.srStudentName);
+
+            return tempStudent;
+        }
+
+        private void saveStudents()
+        {
+
+        }
+
+        private void loadStudents()
+        {
+
+        }
     }
 }
