@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace week_1_hello_object_oriented_world
         public MainWindow()
         {
             InitializeComponent();
+            loadStudentsPrimitive();
         }
 
         public class csStudent
@@ -120,15 +122,15 @@ namespace week_1_hello_object_oriented_world
             {
                 MessageBox.Show(E.Message.ToString());
             }
-   
-            if(dicStudents.ContainsKey(myStudent.irStudentId))
+
+            if (dicStudents.ContainsKey(myStudent.irStudentId))
             {
                 MessageBox.Show("Error: This student Id already exists");
                 return;
             }
 
             dicStudents.Add(myStudent.irStudentId, myStudent);
-
+            saveStudentsPrimitive();
             refreshListBox();
         }
 
@@ -141,7 +143,7 @@ namespace week_1_hello_object_oriented_world
             foreach (var vrPerStudent in dicStudents.Values)
             {
                 var vrValue = string.Format("Id: {0}\t{1}", vrPerStudent.irStudentId.ToString("N0"), vrPerStudent.srStudentName);
-                lstStudentsList.Items.Add(vrValue); 
+                lstStudentsList.Items.Add(vrValue);
             }
 
             //sort dictionary by student id first
@@ -161,14 +163,79 @@ namespace week_1_hello_object_oriented_world
             return tempStudent;
         }
 
-        private void saveStudents()
-        {
+        private string srStudentSaveFileName = "student_records.txt";
+        private char crStudentRecordSplit = '$';
+        private char crLessonRecordSplit = '#';
+        private char crLessonListSplit = '|';
 
+        //call this whenever modify dictionary student
+        private void saveStudentsPrimitive()
+        {
+            StreamWriter swWriteStudents = new StreamWriter(srStudentSaveFileName);
+            foreach (var vrStudent in dicStudents)
+            {
+                string srLesson = composeLessons(vrStudent.Value.lstLessons);
+                string srStudentRecord = string.Format("{0}{1}{2}{1}{3}",
+                    vrStudent.Value.irStudentId, crStudentRecordSplit, vrStudent.Value.srStudentName, srLesson);
+                swWriteStudents.WriteLine(srStudentRecord);
+            }
+            swWriteStudents.Flush();
+            swWriteStudents.Close();
         }
 
-        private void loadStudents()
+        private string composeLessons(List<csLesson> lstLessons)
         {
+            List<string> lstRecords = new List<string>();
 
+            foreach (var vrLeson in lstLessons)
+            {
+                string srLessonRecord = string.Format("{0}{1}{2}{1}{3}", 
+                    vrLeson.irLessonId, // index 0
+                    crLessonRecordSplit, 
+                    vrLeson.srLessonName, // index 1
+                    crLessonRecordSplit, 
+                    vrLeson.irFinalScore); // index 2
+
+                lstRecords.Add(srLessonRecord);
+            }
+
+            return string.Join(crLessonListSplit.ToString(), lstRecords);
+        }
+
+        //call this when the application starts
+        private void loadStudentsPrimitive()
+        {
+            foreach (var vrLine in File.ReadLines(srStudentSaveFileName))
+            {
+                csStudent studentTemp = new csStudent();
+                var vrSplitted = vrLine.Split(crStudentRecordSplit);
+                studentTemp.irStudentId = Convert.ToInt32(vrSplitted[0]);
+                studentTemp.srStudentName = vrSplitted[1];
+                studentTemp.lstLessons= composeLessonsFromText(vrSplitted[2]);
+                dicStudents.Add(studentTemp.irStudentId, studentTemp);
+            }
+
+            refreshListBox();
+        }
+
+        private List<csLesson> composeLessonsFromText(string srLine)
+        {
+            List<csLesson> lstListLessons = new List<csLesson>();
+
+            foreach (var vrPerLesson in srLine.Split(crLessonListSplit))
+            {
+                if (string.IsNullOrEmpty(vrPerLesson))
+                    continue;
+
+                csLesson myTempLesson = new csLesson();
+                var vrSplitLesson = vrPerLesson.Split(crLessonRecordSplit);
+                myTempLesson.irLessonId= Convert.ToInt32(vrSplitLesson[0]);
+                myTempLesson.srLessonName = vrSplitLesson[1];
+                myTempLesson.irFinalScore = Convert.ToInt32(vrSplitLesson[2]);
+                lstListLessons.Add(myTempLesson);
+            }
+
+            return lstListLessons;
         }
     }
 }
