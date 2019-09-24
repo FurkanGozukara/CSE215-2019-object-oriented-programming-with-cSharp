@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="csPublicFunctions.cs" />
     <Compile Include="csStudent.cs" />
     <Compile Include="csCustomExtensions.cs" />
     <Compile Include="csStudent2.cs" />

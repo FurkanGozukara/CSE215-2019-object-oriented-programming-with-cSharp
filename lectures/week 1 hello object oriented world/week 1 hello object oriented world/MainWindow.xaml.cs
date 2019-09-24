@@ -34,7 +34,7 @@ namespace week_1_hello_object_oriented_world
 
         private void changeVisibility()
         {
-            if (txtCourseName.Visibility==Visibility.Visible)
+            if (txtCourseName.Visibility == Visibility.Visible)
                 txtCourseName.Visibility = Visibility.Hidden;
             else
             if (txtCourseName.Visibility != Visibility.Visible)
@@ -47,8 +47,8 @@ namespace week_1_hello_object_oriented_world
                 txtCourseScore.Visibility = Visibility.Visible;
         }
 
-    
-        private Dictionary<int, csStudent> dicStudents = new Dictionary<int, csStudent>();
+
+        public Dictionary<int, csStudent> dicStudents = new Dictionary<int, csStudent>();
 
         private void BtnAddStudent_Click(object sender, RoutedEventArgs e)
         {
@@ -97,7 +97,7 @@ namespace week_1_hello_object_oriented_world
             }
 
             dicStudents.Add(myStudent.irStudentId, myStudent);
-            saveStudentsPrimitive();
+            csPublicFunctions.saveStudentsPrimitive(srStudentSaveFileName, dicStudents, crStudentRecordSplit, crLessonRecordSplit, crLessonListSplit);
             refreshListBox();
         }
 
@@ -135,39 +135,9 @@ namespace week_1_hello_object_oriented_world
         private char crLessonRecordSplit = '#';
         private char crLessonListSplit = '|';
 
-        //call this whenever modify dictionary student
-        private void saveStudentsPrimitive()
-        {
-            StreamWriter swWriteStudents = new StreamWriter(srStudentSaveFileName);
-            foreach (var vrStudent in dicStudents)
-            {
-                string srLesson = composeLessons(vrStudent.Value.lstLessons);
-                string srStudentRecord = string.Format("{0}{1}{2}{1}{3}",
-                    vrStudent.Value.irStudentId, crStudentRecordSplit, vrStudent.Value.srStudentName, srLesson);
-                swWriteStudents.WriteLine(srStudentRecord);
-            }
-            swWriteStudents.Flush();
-            swWriteStudents.Close();
-        }
 
-        private string composeLessons(List<csLesson> lstLessons)
-        {
-            List<string> lstRecords = new List<string>();
 
-            foreach (var vrLeson in lstLessons)
-            {
-                string srLessonRecord = string.Format("{0}{1}{2}{1}{3}",
-                    vrLeson.irLessonId, // index 0
-                    crLessonRecordSplit,
-                    vrLeson.srLessonName, // index 1
-                    crLessonRecordSplit,
-                    vrLeson.irFinalScore); // index 2
-
-                lstRecords.Add(srLessonRecord);
-            }
-
-            return string.Join(crLessonListSplit.ToString(), lstRecords);
-        }
+ 
 
         //call this when the application starts
         private void loadStudentsPrimitive()
