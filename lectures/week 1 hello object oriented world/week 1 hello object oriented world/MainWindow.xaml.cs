@@ -17,7 +17,7 @@ using myCustomMethodExtensions;
 using nmStudent;
 //using nmStudent2;
 using static week_1_hello_object_oriented_world.csPublicFunctions.constantVariables;
-
+using static week_1_hello_object_oriented_world.csPublicFunctions;
 
 namespace week_1_hello_object_oriented_world
 {
@@ -49,57 +49,15 @@ namespace week_1_hello_object_oriented_world
                 txtCourseScore.Visibility = Visibility.Visible;
         }
 
-
-        public Dictionary<int, csStudent> dicStudents = new Dictionary<int, csStudent>();
-
         private void BtnAddStudent_Click(object sender, RoutedEventArgs e)
         {
-            int irStudentId = 0;
-            Int32.TryParse(txtStudentId.Text, out irStudentId);
-            if (irStudentId == 0)
+            string srResult = "";
+            bool blResult = addStudent(out srResult, txtStudentId.Text, txtStudentName.Text);
+            if(blResult==false)
             {
-                MessageBox.Show("Error: Please enter a valid integer student Id");
+                MessageBox.Show(srResult);
                 return;
             }
-            if (txtStudentName.Text.Length < 2)
-            {
-                MessageBox.Show("Error: Please enter a valid student name");
-                return;
-            }
-            if (txtStudentName.Text.Any(pr => pr.isInteger()) == true)
-            {
-                MessageBox.Show("Error: Please enter a valid student name");
-                return;
-            }
-            csStudent myStudent = new csStudent(_StudentName: txtStudentName.Text);
-
-            csStudent myStudentCopy = new csStudent();
-
-            myStudentCopy = csCustomExtensions.copyCsStudent(myStudent);
-
-            myStudentCopy = copyCsStudent(myStudent);
-
-            myStudentCopy = myStudent.copyCsStudent();
-
-            myStudentCopy.srStudentName = "test";
-
-            try
-            {
-                myStudent.irStudentId = txtStudentId.Text.myCustomToInt();
-            }
-            catch (Exception E)
-            {
-                MessageBox.Show(E.Message.ToString());
-            }
-
-            if (dicStudents.ContainsKey(myStudent.irStudentId))
-            {
-                MessageBox.Show("Error: This student Id already exists");
-                return;
-            }
-
-            dicStudents.Add(myStudent.irStudentId, myStudent);
-            csPublicFunctions.saveStudentsPrimitive(dicStudents);
             refreshListBox();
         }
 
@@ -107,7 +65,7 @@ namespace week_1_hello_object_oriented_world
         {
             lstStudentsList.Items.Clear();
 
-            dicStudents = dicStudents.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            csPublicFunctions.dicStudents = dicStudents.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
 
             foreach (var vrPerStudent in dicStudents.Values)
             {
@@ -118,24 +76,6 @@ namespace week_1_hello_object_oriented_world
             //sort dictionary by student id first
             //then add student information to the listbox
         }
-
-
-        public csStudent copyCsStudent(csStudent myStudent)
-        {
-            csStudent tempStudent = new csStudent();
-            tempStudent.srStudentName = myStudent.srStudentName;
-            tempStudent.irStudentId = myStudent.irStudentId;
-
-            //this equals to above 3 line
-            return new csStudent(myStudent.irStudentId, myStudent.srStudentName);
-
-            return tempStudent;
-        }
-
-
-
-
- 
 
         //call this when the application starts
         private void loadStudentsPrimitive()

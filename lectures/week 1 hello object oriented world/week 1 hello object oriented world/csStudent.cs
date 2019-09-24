@@ -8,6 +8,7 @@ namespace nmStudent
 {
     public class csStudent
     {
+     
         public csStudent(int _studentId = 0, string _StudentName = "")
         {
             irStudentId = _studentId;
