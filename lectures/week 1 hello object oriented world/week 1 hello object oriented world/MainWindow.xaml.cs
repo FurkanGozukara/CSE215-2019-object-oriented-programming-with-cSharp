@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using myCustomMethodExtensions;
+using nmStudent;
+//using nmStudent2;
 
 namespace week_1_hello_object_oriented_world
 {
@@ -45,59 +47,7 @@ namespace week_1_hello_object_oriented_world
                 txtCourseScore.Visibility = Visibility.Visible;
         }
 
-        public class csStudent
-        {
-            public csStudent(int _studentId = 0, string _StudentName = "")
-            {
-                irStudentId = _studentId;
-                srStudentName = _StudentName;
-            }
-
-            public csStudent()
-            {
-                irStudentId = 1;
-                srStudentName = "a";
-            }
-
-            public int irStudentId = 0;
-            public string srStudentName = "";
-            public List<csLesson> lstLessons = new List<csLesson>();
-        }
-
-        public class csLesson
-        {
-            private int _irLessonId = 0;
-
-            public int irLessonId
-            {
-                get { return _irLessonId; }
-                set { _irLessonId = value; }
-            }
-
-            private string _srLessonName = "";
-
-            public string srLessonName
-            {
-                get { return _srLessonName; }
-                set { _srLessonName = value; }
-            }
-
-            private int _irFinalScore = 0;
-
-            public int irFinalScore
-            {
-                get { return _irFinalScore; }
-                set
-                {
-                    _irLessonId = value;
-                    if (value > 100)
-                        _irFinalScore = 100;
-                    if (value < 0)
-                        _irFinalScore = 0;
-                }
-            }
-        }
-
+    
         private Dictionary<int, csStudent> dicStudents = new Dictionary<int, csStudent>();
 
         private void BtnAddStudent_Click(object sender, RoutedEventArgs e)
@@ -253,6 +203,14 @@ namespace week_1_hello_object_oriented_world
             }
 
             return lstListLessons;
+        }
+
+        private void LstStudentsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = (ListBox)sender;
+            var selectedStudent = item.SelectedItem.ToString();
+            int irSelectedStudentNo = Convert.ToInt32(selectedStudent.Split('\t').First());
+
         }
     }
 }
