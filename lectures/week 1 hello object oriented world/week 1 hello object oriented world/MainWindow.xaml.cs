@@ -16,6 +16,8 @@ using System.Windows.Shapes;
 using myCustomMethodExtensions;
 using nmStudent;
 //using nmStudent2;
+using static week_1_hello_object_oriented_world.csPublicFunctions.constantVariables;
+
 
 namespace week_1_hello_object_oriented_world
 {
@@ -97,7 +99,7 @@ namespace week_1_hello_object_oriented_world
             }
 
             dicStudents.Add(myStudent.irStudentId, myStudent);
-            csPublicFunctions.saveStudentsPrimitive(srStudentSaveFileName, dicStudents, crStudentRecordSplit, crLessonRecordSplit, crLessonListSplit);
+            csPublicFunctions.saveStudentsPrimitive(dicStudents);
             refreshListBox();
         }
 
@@ -130,10 +132,6 @@ namespace week_1_hello_object_oriented_world
             return tempStudent;
         }
 
-        private string srStudentSaveFileName = "student_records.txt";
-        private char crStudentRecordSplit = '$';
-        private char crLessonRecordSplit = '#';
-        private char crLessonListSplit = '|';
 
 
 
