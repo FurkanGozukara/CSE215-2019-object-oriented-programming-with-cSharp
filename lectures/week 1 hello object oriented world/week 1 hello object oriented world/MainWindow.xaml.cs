@@ -26,6 +26,23 @@ namespace week_1_hello_object_oriented_world
         {
             InitializeComponent();
             loadStudentsPrimitive();
+            lblSelectedStudent.Content = "";
+            changeVisibility();
+        }
+
+        private void changeVisibility()
+        {
+            if (txtCourseName.Visibility==Visibility.Visible)
+                txtCourseName.Visibility = Visibility.Hidden;
+            else
+            if (txtCourseName.Visibility != Visibility.Visible)
+                txtCourseName.Visibility = Visibility.Visible;
+
+            if (txtCourseScore.Visibility == Visibility.Visible)
+                txtCourseScore.Visibility = Visibility.Hidden;
+            else
+            if (txtCourseScore.Visibility != Visibility.Visible)
+                txtCourseScore.Visibility = Visibility.Visible;
         }
 
         public class csStudent
@@ -189,11 +206,11 @@ namespace week_1_hello_object_oriented_world
 
             foreach (var vrLeson in lstLessons)
             {
-                string srLessonRecord = string.Format("{0}{1}{2}{1}{3}", 
+                string srLessonRecord = string.Format("{0}{1}{2}{1}{3}",
                     vrLeson.irLessonId, // index 0
-                    crLessonRecordSplit, 
+                    crLessonRecordSplit,
                     vrLeson.srLessonName, // index 1
-                    crLessonRecordSplit, 
+                    crLessonRecordSplit,
                     vrLeson.irFinalScore); // index 2
 
                 lstRecords.Add(srLessonRecord);
@@ -211,7 +228,7 @@ namespace week_1_hello_object_oriented_world
                 var vrSplitted = vrLine.Split(crStudentRecordSplit);
                 studentTemp.irStudentId = Convert.ToInt32(vrSplitted[0]);
                 studentTemp.srStudentName = vrSplitted[1];
-                studentTemp.lstLessons= composeLessonsFromText(vrSplitted[2]);
+                studentTemp.lstLessons = composeLessonsFromText(vrSplitted[2]);
                 dicStudents.Add(studentTemp.irStudentId, studentTemp);
             }
 
@@ -229,7 +246,7 @@ namespace week_1_hello_object_oriented_world
 
                 csLesson myTempLesson = new csLesson();
                 var vrSplitLesson = vrPerLesson.Split(crLessonRecordSplit);
-                myTempLesson.irLessonId= Convert.ToInt32(vrSplitLesson[0]);
+                myTempLesson.irLessonId = Convert.ToInt32(vrSplitLesson[0]);
                 myTempLesson.srLessonName = vrSplitLesson[1];
                 myTempLesson.irFinalScore = Convert.ToInt32(vrSplitLesson[2]);
                 lstListLessons.Add(myTempLesson);
