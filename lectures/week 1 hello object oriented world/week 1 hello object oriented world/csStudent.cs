@@ -14,7 +14,7 @@ namespace nmStudent
             irStudentId = _studentId;
             srStudentName = _StudentName;
         }
-
+        //deneme
         public csStudent()
         {
             irStudentId = 1;
