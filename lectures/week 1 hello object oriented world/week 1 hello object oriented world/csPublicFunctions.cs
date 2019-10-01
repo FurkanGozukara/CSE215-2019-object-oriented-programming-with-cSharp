@@ -46,7 +46,7 @@ namespace week_1_hello_object_oriented_world
             {
                 get
                 {
-                    return _crLessonRecordSplit;
+                    return _crLessonListSplit;
                 }
             }
         }
@@ -74,10 +74,9 @@ namespace week_1_hello_object_oriented_world
             {
                 string srLessonRecord = string.Format("{0}{1}{2}{1}{3}",
                     vrLeson.irLessonId, // index 0
-                    constantVariables.crLessonRecordSplit,
-                    vrLeson.srLessonName, // index 1
-                    constantVariables.crLessonRecordSplit,
-                    vrLeson.irFinalScore); // index 2
+                    constantVariables.crLessonRecordSplit,// index 1
+                    vrLeson.srLessonName, // index 2
+                    vrLeson.irFinalScore); // // index 3
 
                 lstRecords.Add(srLessonRecord);
             }

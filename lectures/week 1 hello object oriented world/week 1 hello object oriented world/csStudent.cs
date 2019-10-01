@@ -51,7 +51,7 @@ namespace nmStudent
             get { return _irFinalScore; }
             set
             {
-                _irLessonId = value;
+                _irFinalScore = value;
                 if (value > 100)
                     _irFinalScore = 100;
                 if (value < 0)

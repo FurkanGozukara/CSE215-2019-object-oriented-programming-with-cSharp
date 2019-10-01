@@ -31,15 +31,19 @@ namespace week_1_hello_object_oriented_world
             InitializeComponent();
             loadStudentsPrimitive();
             lblSelectedStudent.Content = "";
-            changeVisibility();
+            changeVisibility(false);
         }
 
-        private void changeVisibility()
+        private void changeVisibility(bool blTrue = true)
         {
             if (txtCourseName.Visibility == Visibility.Visible)
+            {
+                if (blTrue == true)
+                    return;
                 txtCourseName.Visibility = Visibility.Hidden;
+            }
             else
-            if (txtCourseName.Visibility != Visibility.Visible)
+        if (txtCourseName.Visibility != Visibility.Visible)
                 txtCourseName.Visibility = Visibility.Visible;
 
             if (txtCourseScore.Visibility == Visibility.Visible)
@@ -53,7 +57,7 @@ namespace week_1_hello_object_oriented_world
         {
             string srResult = "";
             bool blResult = addStudent(out srResult, txtStudentId.Text, txtStudentName.Text);
-            if(blResult==false)
+            if (blResult == false)
             {
                 MessageBox.Show(srResult);
                 return;
@@ -70,6 +74,10 @@ namespace week_1_hello_object_oriented_world
             foreach (var vrPerStudent in dicStudents.Values)
             {
                 var vrValue = string.Format("Id: {0}\t{1}", vrPerStudent.irStudentId.ToString("N0"), vrPerStudent.srStudentName);
+                foreach (var vrLesson in vrPerStudent.lstLessons)
+                {
+                    vrValue += "\t" + vrLesson.srLessonName + " : " + vrLesson.irFinalScore;
+                }
                 lstStudentsList.Items.Add(vrValue);
             }
 
@@ -113,12 +121,44 @@ namespace week_1_hello_object_oriented_world
             return lstListLessons;
         }
 
+        static int irSelectedStudentNo = 0;
+
+        private void LstStudentsList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void BtnAddCourse_Click(object sender, RoutedEventArgs e)
+        {
+            if (irSelectedStudentNo < 1)
+                return;
+
+            csLesson myLesson = new csLesson();
+            int irOutFinalScore = 0;
+            Int32.TryParse(txtCourseScore.Text, out irOutFinalScore);
+            myLesson.srLessonName = txtCourseName.Text;
+            myLesson.irFinalScore = irOutFinalScore;
+
+            if (dicStudents[irSelectedStudentNo].lstLessons.Any(pr => pr.srLessonName == myLesson.srLessonName))
+            {
+                dicStudents[irSelectedStudentNo].lstLessons.Where(pr => pr.srLessonName == myLesson.srLessonName).First().irFinalScore = myLesson.irFinalScore;
+            }
+            else
+            {
+                dicStudents[irSelectedStudentNo].lstLessons.Add(myLesson);
+            }
+            csPublicFunctions.saveStudentsPrimitive(dicStudents);
+            refreshListBox();
+        }
+
         private void LstStudentsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var item = (ListBox)sender;
-            var selectedStudent = item.SelectedItem.ToString();
-            int irSelectedStudentNo = Convert.ToInt32(selectedStudent.Split('\t').First());
-
+            if (item.SelectedItem == null)
+                return;
+            var selectedStudent = item.SelectedItem.ToString().Replace("Id: ", "");
+            irSelectedStudentNo = Convert.ToInt32(selectedStudent.Split('\t').First());
+            changeVisibility();
         }
     }
 }
