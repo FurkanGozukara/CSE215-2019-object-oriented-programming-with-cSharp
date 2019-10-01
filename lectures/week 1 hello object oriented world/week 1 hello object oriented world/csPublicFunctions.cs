@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using myCustomMethodExtensions;
 using static myCustomMethodExtensions.csCustomExtensions;
 using static week_1_hello_object_oriented_world.csPublicFunctions.constantVariables;
+using Newtonsoft.Json;
 
 namespace week_1_hello_object_oriented_world
 {
@@ -135,8 +136,8 @@ namespace week_1_hello_object_oriented_world
             }
 
             dicStudents.Add(myStudent.irStudentId, myStudent);
-            csPublicFunctions.saveStudentsPrimitive(dicStudents);
-
+            //csPublicFunctions.saveStudentsPrimitive(dicStudents);
+            saveProperly(dicStudents);
             return true;
         }
 
@@ -171,7 +172,8 @@ namespace week_1_hello_object_oriented_world
             {
                 dicStudents[irSelectedStudentNo].lstLessons.Add(myLesson);
             }
-            csPublicFunctions.saveStudentsPrimitive(dicStudents);
+            //csPublicFunctions.saveStudentsPrimitive(dicStudents);
+            saveProperly(dicStudents);
         }
 
         public static void loadStudentsPrimitive()
@@ -205,6 +207,11 @@ namespace week_1_hello_object_oriented_world
             }
 
             return lstListLessons;
+        }
+
+        public static void saveProperly(Dictionary<int, csStudent> dicStudents)
+        {
+            var serialized = JsonConvert.SerializeObject(dicStudents);
         }
     }
 }
