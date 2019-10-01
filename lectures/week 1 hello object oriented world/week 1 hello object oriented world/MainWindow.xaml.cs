@@ -30,6 +30,7 @@ namespace week_1_hello_object_oriented_world
         {
             InitializeComponent();
             loadStudentsPrimitive();
+            refreshListBox();
             lblSelectedStudent.Content = "";
             changeVisibility(false);
         }
@@ -86,68 +87,12 @@ namespace week_1_hello_object_oriented_world
         }
 
         //call this when the application starts
-        private void loadStudentsPrimitive()
-        {
-            foreach (var vrLine in File.ReadLines(srStudentSaveFileName))
-            {
-                csStudent studentTemp = new csStudent();
-                var vrSplitted = vrLine.Split(crStudentRecordSplit);
-                studentTemp.irStudentId = Convert.ToInt32(vrSplitted[0]);
-                studentTemp.srStudentName = vrSplitted[1];
-                studentTemp.lstLessons = composeLessonsFromText(vrSplitted[2]);
-                dicStudents.Add(studentTemp.irStudentId, studentTemp);
-            }
-
-            refreshListBox();
-        }
-
-        private List<csLesson> composeLessonsFromText(string srLine)
-        {
-            List<csLesson> lstListLessons = new List<csLesson>();
-
-            foreach (var vrPerLesson in srLine.Split(crLessonListSplit))
-            {
-                if (string.IsNullOrEmpty(vrPerLesson))
-                    continue;
-
-                csLesson myTempLesson = new csLesson();
-                var vrSplitLesson = vrPerLesson.Split(crLessonRecordSplit);
-                myTempLesson.irLessonId = Convert.ToInt32(vrSplitLesson[0]);
-                myTempLesson.srLessonName = vrSplitLesson[1];
-                myTempLesson.irFinalScore = Convert.ToInt32(vrSplitLesson[2]);
-                lstListLessons.Add(myTempLesson);
-            }
-
-            return lstListLessons;
-        }
-
+  
         static int irSelectedStudentNo = 0;
-
-        private void LstStudentsList_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
 
         private void BtnAddCourse_Click(object sender, RoutedEventArgs e)
         {
-            if (irSelectedStudentNo < 1)
-                return;
-
-            csLesson myLesson = new csLesson();
-            int irOutFinalScore = 0;
-            Int32.TryParse(txtCourseScore.Text, out irOutFinalScore);
-            myLesson.srLessonName = txtCourseName.Text;
-            myLesson.irFinalScore = irOutFinalScore;
-
-            if (dicStudents[irSelectedStudentNo].lstLessons.Any(pr => pr.srLessonName == myLesson.srLessonName))
-            {
-                dicStudents[irSelectedStudentNo].lstLessons.Where(pr => pr.srLessonName == myLesson.srLessonName).First().irFinalScore = myLesson.irFinalScore;
-            }
-            else
-            {
-                dicStudents[irSelectedStudentNo].lstLessons.Add(myLesson);
-            }
-            csPublicFunctions.saveStudentsPrimitive(dicStudents);
+            csPublicFunctions.addCourse(irSelectedStudentNo, txtCourseScore.Text, txtCourseName.Text);
             refreshListBox();
         }
 

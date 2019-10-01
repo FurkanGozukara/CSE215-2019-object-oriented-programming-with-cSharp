@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using myCustomMethodExtensions;
 using static myCustomMethodExtensions.csCustomExtensions;
+using static week_1_hello_object_oriented_world.csPublicFunctions.constantVariables;
 
 namespace week_1_hello_object_oriented_world
 {
@@ -149,6 +150,61 @@ namespace week_1_hello_object_oriented_world
             return new csStudent(myStudent.irStudentId, myStudent.srStudentName);
 
             return tempStudent;
+        }
+
+        public static void addCourse(int irSelectedStudentNo, string srCourseScoreText, string srCourseName )
+        {
+            if (irSelectedStudentNo < 1)
+                return;
+
+            csLesson myLesson = new csLesson();
+            int irOutFinalScore = 0;
+            Int32.TryParse(srCourseScoreText, out irOutFinalScore);
+            myLesson.srLessonName = srCourseName;
+            myLesson.irFinalScore = irOutFinalScore;
+
+            if (dicStudents[irSelectedStudentNo].lstLessons.Any(pr => pr.srLessonName == myLesson.srLessonName))
+            {
+                dicStudents[irSelectedStudentNo].lstLessons.Where(pr => pr.srLessonName == myLesson.srLessonName).First().irFinalScore = myLesson.irFinalScore;
+            }
+            else
+            {
+                dicStudents[irSelectedStudentNo].lstLessons.Add(myLesson);
+            }
+            csPublicFunctions.saveStudentsPrimitive(dicStudents);
+        }
+
+        public static void loadStudentsPrimitive()
+        {
+            foreach (var vrLine in File.ReadLines(srStudentSaveFileName))
+            {
+                csStudent studentTemp = new csStudent();
+                var vrSplitted = vrLine.Split(crStudentRecordSplit);
+                studentTemp.irStudentId = Convert.ToInt32(vrSplitted[0]);
+                studentTemp.srStudentName = vrSplitted[1];
+                studentTemp.lstLessons = composeLessonsFromText(vrSplitted[2]);
+                dicStudents.Add(studentTemp.irStudentId, studentTemp);
+            }
+        }
+
+        private static List<csLesson> composeLessonsFromText(string srLine)
+        {
+            List<csLesson> lstListLessons = new List<csLesson>();
+
+            foreach (var vrPerLesson in srLine.Split(crLessonListSplit))
+            {
+                if (string.IsNullOrEmpty(vrPerLesson))
+                    continue;
+
+                csLesson myTempLesson = new csLesson();
+                var vrSplitLesson = vrPerLesson.Split(crLessonRecordSplit);
+                myTempLesson.irLessonId = Convert.ToInt32(vrSplitLesson[0]);
+                myTempLesson.srLessonName = vrSplitLesson[1];
+                myTempLesson.irFinalScore = Convert.ToInt32(vrSplitLesson[2]);
+                lstListLessons.Add(myTempLesson);
+            }
+
+            return lstListLessons;
         }
     }
 }
