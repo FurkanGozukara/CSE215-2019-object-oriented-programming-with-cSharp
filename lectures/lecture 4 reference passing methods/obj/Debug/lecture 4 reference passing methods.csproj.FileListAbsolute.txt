@@ -1,0 +1,7 @@
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 4 reference passing methods\bin\Debug\lecture 4 reference passing methods.exe.config
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 4 reference passing methods\bin\Debug\lecture 4 reference passing methods.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 4 reference passing methods\bin\Debug\lecture 4 reference passing methods.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 4 reference passing methods\obj\Debug\lecture 4 reference passing methods.csprojAssemblyReference.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 4 reference passing methods\obj\Debug\lecture 4 reference passing methods.csproj.CoreCompileInputs.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 4 reference passing methods\obj\Debug\lecture 4 reference passing methods.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 4 reference passing methods\obj\Debug\lecture 4 reference passing methods.pdb

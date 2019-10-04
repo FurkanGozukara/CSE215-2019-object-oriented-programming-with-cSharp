@@ -153,7 +153,7 @@ namespace week_1_hello_object_oriented_world
             return tempStudent;
         }
 
-        public static void addCourse(int irSelectedStudentNo, string srCourseScoreText, string srCourseName )
+        public static void addCourse(int irSelectedStudentNo, string srCourseScoreText, string srCourseName)
         {
             if (irSelectedStudentNo < 1)
                 return;
@@ -212,6 +212,15 @@ namespace week_1_hello_object_oriented_world
         public static void saveProperly(Dictionary<int, csStudent> dicStudents)
         {
             var serialized = JsonConvert.SerializeObject(dicStudents);
+            File.WriteAllText("advanced_save_students.txt", serialized);
+        }
+
+        public static void loadProperly(ref Dictionary<int, csStudent> dicStudents)
+        {
+            if (!File.Exists("advanced_save_students.txt"))
+                return;
+
+            dicStudents = JsonConvert.DeserializeObject<Dictionary<int, csStudent>>(File.ReadAllText("advanced_save_students.txt"));
         }
     }
 }

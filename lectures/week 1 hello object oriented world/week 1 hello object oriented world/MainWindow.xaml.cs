@@ -29,7 +29,8 @@ namespace week_1_hello_object_oriented_world
         public MainWindow()
         {
             InitializeComponent();
-            loadStudentsPrimitive();
+            //loadStudentsPrimitive();
+            loadProperly(ref dicStudents);
             refreshListBox();
             lblSelectedStudent.Content = "";
             changeVisibility(false);
