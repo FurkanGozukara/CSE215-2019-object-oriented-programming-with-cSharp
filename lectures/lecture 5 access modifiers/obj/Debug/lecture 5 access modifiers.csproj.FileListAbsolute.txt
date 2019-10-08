@@ -1,7 +1,10 @@
-C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\bin\Debug\lecture 5 access modifiers.exe.config
-C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\bin\Debug\lecture 5 access modifiers.exe
 C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\bin\Debug\lecture 5 access modifiers.pdb
 C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\obj\Debug\lecture 5 access modifiers.csprojAssemblyReference.cache
 C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\obj\Debug\lecture 5 access modifiers.csproj.CoreCompileInputs.cache
-C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\obj\Debug\lecture 5 access modifiers.exe
 C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\obj\Debug\lecture 5 access modifiers.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\bin\Debug\lecture 5 dll.dll
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\bin\Debug\lecture 5 dll.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\obj\Debug\lecture 5 access modifiers.csproj.CopyComplete
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\bin\Debug\lecture 5 access modifiers.exe.config
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\bin\Debug\lecture 5 access modifiers.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 access modifiers\obj\Debug\lecture 5 access modifiers.exe

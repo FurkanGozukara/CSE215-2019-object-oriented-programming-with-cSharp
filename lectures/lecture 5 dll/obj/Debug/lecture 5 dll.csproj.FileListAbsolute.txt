@@ -1,0 +1,6 @@
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 dll\bin\Debug\lecture 5 dll.dll
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 dll\bin\Debug\lecture 5 dll.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 dll\obj\Debug\lecture 5 dll.csprojAssemblyReference.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 dll\obj\Debug\lecture 5 dll.csproj.CoreCompileInputs.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 dll\obj\Debug\lecture 5 dll.dll
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 5 dll\obj\Debug\lecture 5 dll.pdb

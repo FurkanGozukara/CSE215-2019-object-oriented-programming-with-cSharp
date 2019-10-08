@@ -9,5 +9,10 @@ namespace lecture_5_access_modifiers
     public class Trucks : Cars
     {
         public int capacity { get; set; }
+
+        public void setModel(string srModel)
+        {
+            this.model = srModel;
+        }
     }
 }
