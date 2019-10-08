@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using lecture_5_dll;
@@ -26,6 +27,10 @@ namespace lecture_5_access_modifiers
             myFirstTruck.weight = 4311;
             myFirstTruck.setId(342);
             myFirstTruck.setModel("a101");
+            myFirstTruck.lstPassengers2.Add("person 1");
+            myFirstTruck.lstPassengers2.Add("person 2");
+
+            var properties = getObjectProperties.ObjectPropertyInformation(myFirstTruck);
 
             Console.WriteLine($"My first car brand: {myFirstCar.brand}\tProduction Year: {myFirstCar.productionYear}\t Weight: {myFirstCar.getWeightKg()} \t Id: {myFirstCar.readId()}");
 
@@ -34,6 +39,8 @@ namespace lecture_5_access_modifiers
             Taxi myTaxi = new Taxi();
             //since srTaxiBrand is internal and from different assembly i can not access it
             myTaxi.srTaxiName = "gg";
+
+            Console.WriteLine("name of rim value 700: " + Enum.GetName(typeof(Cars.rims), 700));
 
             Console.WriteLine($"max speed 1 : {PublicVariables.maxSpeed} \t max speed 2 : {PublicVariables.maxSpeed2}");
 
@@ -59,7 +66,7 @@ namespace lecture_5_access_modifiers
             switch (selectedRim)
             {
                 case Cars.rims.rim_1:
-                    Console.WriteLine("you have selected "+ selectedRim.ToString());
+                    Console.WriteLine("you have selected " + selectedRim.ToString());
                     break;
                 case Cars.rims.rim_2:
                     Console.WriteLine("you have selected " + selectedRim.ToString());

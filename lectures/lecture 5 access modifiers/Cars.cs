@@ -16,6 +16,12 @@ namespace lecture_5_access_modifiers
             rim_other=0
         }
 
+        //field this can not be enumaretd with reflection
+        public List<string> lstPassengers2 = new List<string>();
+
+        //property. this can be enumarated with reflection
+        public List<string> lstPassengers { get; set; } = new List<string>();
+
         public int productionYear { get; set; }
         public int weight { get; set; }
 
