@@ -78,7 +78,7 @@ namespace week_1_hello_object_oriented_world
                 var vrValue = string.Format("Id: {0}\t{1}", vrPerStudent.irStudentId.ToString("N0"), vrPerStudent.srStudentName);
                 foreach (var vrLesson in vrPerStudent.lstLessons)
                 {
-                    vrValue += "\t" + vrLesson.srLessonName + " : " + vrLesson.irFinalScore;
+                    vrValue += "\t    " + vrLesson.srLessonName + " : " + vrLesson.irFinalScore;
                 }
                 lstStudentsList.Items.Add(vrValue);
             }
