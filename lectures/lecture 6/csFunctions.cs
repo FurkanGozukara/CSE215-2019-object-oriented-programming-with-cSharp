@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace lecture_6
 {
-//    Static Polymorphism
-//The mechanism of linking a function with an object during compile time is called early binding.It is also called static binding.C# provides two techniques to implement static polymorphism. They are −
+    //    Static Polymorphism
+    //The mechanism of linking a function with an object during compile time is called early binding.It is also called static binding.C# provides two techniques to implement static polymorphism. They are −
 
-//Function overloading
-//Operator overloading
+    //Function overloading
+    //Operator overloading
+    //https://www.c-sharpcorner.com/UploadFile/ff2f08/understanding-polymorphism-in-C-Sharp/
+    //https://www.tutorialspoint.com/csharp/csharp_polymorphism.htm
 
     public static class csFunctions
     {

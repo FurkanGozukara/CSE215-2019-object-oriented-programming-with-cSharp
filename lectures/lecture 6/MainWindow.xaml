@@ -10,7 +10,8 @@
         <Button x:Name="btnExceptionHandle" Content="exception handling" HorizontalAlignment="Left" Margin="57,37,0,0" VerticalAlignment="Top" Width="75" Click="exception_handle"/>
         <Button x:Name="btnThisVsBase" Content="this vs base keyword" HorizontalAlignment="Left" Margin="57,87,0,0" VerticalAlignment="Top" Width="184" Height="48" Click="BtnThisVsBase_Click"/>
         <Button x:Name="btnAbstracClass" Content="abstract class" HorizontalAlignment="Left" Margin="57,168,0,0" VerticalAlignment="Top" Width="168" Height="67" Click="BtnAbstracClass_Click"/>
-        <Button x:Name="btnFunctionOverload" Content="function overload" HorizontalAlignment="Left" Margin="57,263,0,0" VerticalAlignment="Top" Width="168" Height="51" Click="function_overload"/>
+        <Button x:Name="btnFunctionOverload" Content="function overload Static Polymorphism" HorizontalAlignment="Left" Margin="46,254,0,0" VerticalAlignment="Top" Width="249" Height="51" Click="function_overload"/>
+        <Button x:Name="btnFunctionOverload_Copy" Content="method overload Static Polymorphism" HorizontalAlignment="Left" Margin="46,323,0,0" VerticalAlignment="Top" Width="249" Height="51" Click="method_overload" />
 
     </Grid>
 </Window>

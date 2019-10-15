@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Box.cs" />
     <Compile Include="csAbstract.cs" />
     <Compile Include="csFunctions.cs" />
     <Compile Include="MainWindow.xaml.cs">
