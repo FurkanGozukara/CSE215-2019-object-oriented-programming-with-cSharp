@@ -12,6 +12,7 @@
         <Button x:Name="btnAbstracClass" Content="abstract class" HorizontalAlignment="Left" Margin="57,168,0,0" VerticalAlignment="Top" Width="168" Height="67" Click="BtnAbstracClass_Click"/>
         <Button x:Name="btnFunctionOverload" Content="function overload Static Polymorphism" HorizontalAlignment="Left" Margin="46,254,0,0" VerticalAlignment="Top" Width="249" Height="51" Click="function_overload"/>
         <Button x:Name="btnFunctionOverload_Copy" Content="method overload Static Polymorphism" HorizontalAlignment="Left" Margin="46,323,0,0" VerticalAlignment="Top" Width="249" Height="51" Click="method_overload" />
+        <Button x:Name="btnFunctionOverload_Copy1" Content="dynamic Polymorphism example" HorizontalAlignment="Left" Margin="321,254,0,0" VerticalAlignment="Top" Width="249" Height="51" Click="dynamic_poli_example"  />
 
     </Grid>
 </Window>

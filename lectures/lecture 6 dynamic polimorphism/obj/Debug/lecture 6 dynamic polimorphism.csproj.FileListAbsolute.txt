@@ -1,0 +1,7 @@
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 6 dynamic polimorphism\bin\Debug\lecture 6 dynamic polimorphism.exe.config
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 6 dynamic polimorphism\bin\Debug\lecture 6 dynamic polimorphism.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 6 dynamic polimorphism\bin\Debug\lecture 6 dynamic polimorphism.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 6 dynamic polimorphism\obj\Debug\lecture 6 dynamic polimorphism.csprojAssemblyReference.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 6 dynamic polimorphism\obj\Debug\lecture 6 dynamic polimorphism.csproj.CoreCompileInputs.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 6 dynamic polimorphism\obj\Debug\lecture 6 dynamic polimorphism.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 6 dynamic polimorphism\obj\Debug\lecture 6 dynamic polimorphism.pdb

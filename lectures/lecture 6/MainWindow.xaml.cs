@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace lecture_6
 {
     /// <summary>
@@ -207,6 +208,28 @@ namespace lecture_6
             MessageBox.Show(string.Format("Volume of Box4 : {0}", volume));
 
             Box3 = Box.sum_boxes(Box1, Box2);//this is same as Box1+Box2
+
+        }
+
+        private void dynamic_poli_example(object sender, RoutedEventArgs e)
+        {
+            // Polymorphism at work #1: a Rectangle, Triangle and Circle
+            // can all be used whereever a Shape is expected. No cast is
+            // required because an implicit conversion exists from a derived 
+            // class to its base class.
+            var shapes = new List<customShapes.Shape>
+        {
+            new customShapes.Rectangle(),
+            new customShapes.Triangle(),
+            new customShapes.Circle()
+        };
+
+            // Polymorphism at work #2: the virtual method Draw is
+            // invoked on each of the derived classes, not the base class.
+            foreach (var shape in shapes)
+            {
+                shape.Draw();
+            }
 
         }
     }
