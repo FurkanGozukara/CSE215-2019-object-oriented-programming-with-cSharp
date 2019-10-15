@@ -9,6 +9,7 @@
     <Grid>
         <Button x:Name="btnExceptionHandle" Content="exception handling" HorizontalAlignment="Left" Margin="57,37,0,0" VerticalAlignment="Top" Width="75" Click="exception_handle"/>
         <Button x:Name="btnThisVsBase" Content="this vs base keyword" HorizontalAlignment="Left" Margin="57,87,0,0" VerticalAlignment="Top" Width="184" Height="48" Click="BtnThisVsBase_Click"/>
+        <Button x:Name="btnAbstracClass" Content="abstract class" HorizontalAlignment="Left" Margin="57,168,0,0" VerticalAlignment="Top" Width="168" Height="67" Click="BtnAbstracClass_Click"/>
 
     </Grid>
 </Window>

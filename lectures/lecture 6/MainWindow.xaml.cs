@@ -115,5 +115,11 @@ namespace lecture_6
                 MessageBox.Show(base.srName);//base keyword references to parent(inherited from) class
             }
         }
+
+        private void BtnAbstracClass_Click(object sender, RoutedEventArgs e)
+        {
+            csAbstract.Square mySquare = new csAbstract.Square(32);
+            MessageBox.Show(mySquare.area().ToString());
+        }
     }
 }
