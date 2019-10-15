@@ -10,20 +10,30 @@ namespace lecture_6_dynamic_polimorphism
     {
         static void Main(string[] args)
         {
+            List<Drawing> lstDrawings = new List<Drawing>();
 
-            Drawing circle = new Circle();
+            Circle circle = new Circle();
+            lstDrawings.Add(circle);
             Console.WriteLine("Area :" + circle.Area());
 
             Drawing square = new Square();
+            lstDrawings.Add(square);
             Console.WriteLine("Area :" + square.Area());
 
             Drawing rectangle = new Rectangle();
+            lstDrawings.Add(rectangle);
             Console.WriteLine("Area :" + rectangle.Area());
 
             Rectangle2 rectangle2 = new Rectangle2();
+            lstDrawings.Add(rectangle2);
             Console.WriteLine("Area 2 :" + rectangle2.Area2());
 
             Console.WriteLine("Area 3 :" + rectangle2.Area3());
+
+            foreach (var item in lstDrawings)
+            {
+                Console.WriteLine("item  area :" + item.Area());
+            }
 
             Console.ReadLine();
         }
