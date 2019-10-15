@@ -21,6 +21,7 @@ namespace lecture_6
         public class Square : Shape
         {
             private int side;
+            private int irKey = 1231;
             public Square(int x = 0)
             {
                 side = x;
@@ -33,8 +34,13 @@ namespace lecture_6
             }
 
             private string _keyword = "";
-
+            //this is encapsulation
             public override string srKeyword { get { return _keyword; } set { _keyword = value; } }
+            
+            public int returnKey()//encapsulation
+            {
+                return irKey;
+            }
         }
     }
 }
