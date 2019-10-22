@@ -8,6 +8,16 @@ namespace lecture_7_generic_specific_code
 {
     class Program
     {
+        public class myCustomClass
+        {
+            public int customProp { get; set; }
+
+            public myCustomClass(int irVal)
+            {
+                customProp = irVal;
+            }
+        }
+
         static void Main(string[] args)
         {
             // int is the type argument
@@ -18,14 +28,42 @@ namespace lecture_7_generic_specific_code
                 list.AddHead(x);
             }
 
+            var index14 = list[14];
+
             foreach (int i in list)
             {
                 System.Console.Write(i + " ");
             }
+
             Console.WriteLine();
             System.Console.WriteLine(list[12]);
             System.Console.WriteLine("\nDone");
 
+            GenericList<string> lstStr = new GenericList<string>();
+
+            lstStr.AddHead("deneme 1");
+            lstStr.AddHead("deneme 2");
+
+            var index3 = lstStr[3];
+
+            foreach (var vrItem in lstStr)
+            {
+                Console.WriteLine(vrItem);
+            }
+
+            GenericList<myCustomClass> lstCustom = new GenericList<myCustomClass>();
+
+            Console.WriteLine();
+            for (int i = 0; i < 100; i++)
+            {
+                lstCustom.AddHead(new myCustomClass(i));
+            }
+
+            foreach (var vrPerCustom in lstCustom)
+            {
+                Console.Write("\t" + vrPerCustom.customProp);
+            }
+            Console.WriteLine();
             Console.WriteLine("special yield return");
 
             foreach (int i in SpecialPower(2, 8))
@@ -37,7 +75,10 @@ namespace lecture_7_generic_specific_code
         }
 
         // type parameter T in angle brackets
-        public class GenericList<T>
+        // where T : struct 
+
+        //public class GenericList where T : struct
+        public class GenericList<T>// where T : struct // e.g. if i force it to be struct i can not use string or class types 
         {
             // The nested class is also generic on T.
             private class Node
@@ -104,6 +145,7 @@ namespace lecture_7_generic_specific_code
                 {
                     if (index >= Lenght)
                     {
+                        return default(T);//if t is class type null, if primite 0, if struct default of struct
                         throw new System.ArgumentException("Out of range error", "index");
                     }
                     Node current = head;
