@@ -1,0 +1,7 @@
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 generic specific code\bin\Debug\lecture 7 generic specific code.exe.config
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 generic specific code\bin\Debug\lecture 7 generic specific code.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 generic specific code\bin\Debug\lecture 7 generic specific code.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 generic specific code\obj\Debug\lecture 7 generic specific code.csprojAssemblyReference.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 generic specific code\obj\Debug\lecture 7 generic specific code.csproj.CoreCompileInputs.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 generic specific code\obj\Debug\lecture 7 generic specific code.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 generic specific code\obj\Debug\lecture 7 generic specific code.pdb
