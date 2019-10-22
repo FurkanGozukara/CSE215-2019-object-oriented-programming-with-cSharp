@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lecture 7 selaed class", "lecture 7 selaed class.csproj", "{74CD7313-7085-4870-A167-53AC2B70C081}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74CD7313-7085-4870-A167-53AC2B70C081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74CD7313-7085-4870-A167-53AC2B70C081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74CD7313-7085-4870-A167-53AC2B70C081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74CD7313-7085-4870-A167-53AC2B70C081}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72AF79FD-3467-4EC5-A4D2-A7CE8F249C60}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 selaed class\bin\Debug\lecture 7 selaed class.exe.config
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 selaed class\bin\Debug\lecture 7 selaed class.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 selaed class\bin\Debug\lecture 7 selaed class.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 selaed class\obj\Debug\lecture 7 selaed class.csprojAssemblyReference.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 selaed class\obj\Debug\lecture 7 selaed class.csproj.CoreCompileInputs.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 selaed class\obj\Debug\lecture 7 selaed class.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 7 selaed class\obj\Debug\lecture 7 selaed class.pdb
