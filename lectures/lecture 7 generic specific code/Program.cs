@@ -22,7 +22,8 @@ namespace lecture_7_generic_specific_code
             {
                 System.Console.Write(i + " ");
             }
-        
+            Console.WriteLine();
+            System.Console.WriteLine(list[12]);
             System.Console.WriteLine("\nDone");
 
             Console.WriteLine("special yield return");
@@ -31,8 +32,6 @@ namespace lecture_7_generic_specific_code
             {
                 Console.Write("{0} ", i);
             }
-
-
 
             Console.ReadLine();
         }
@@ -73,12 +72,16 @@ namespace lecture_7_generic_specific_code
             // constructor
             public GenericList()
             {
+                Lenght = 0;
                 head = null;
             }
+
+            public int Lenght { get; set; }
 
             // T as method parameter type:
             public void AddHead(T t)
             {
+                Lenght++;
                 Node n = new Node(t);
                 n.Next = head;
                 head = n;
@@ -92,6 +95,23 @@ namespace lecture_7_generic_specific_code
                 {
                     yield return current.Data;
                     current = current.Next;
+                }
+            }
+
+            public T this[int index]
+            {
+                get
+                {
+                    if (index >= Lenght)
+                    {
+                        throw new System.ArgumentException("Out of range error", "index");
+                    }
+                    Node current = head;
+                    for (int i = 0; i < index; i++)
+                    {
+                        current = current.Next;
+                    }
+                    return current.Data;
                 }
             }
         }
