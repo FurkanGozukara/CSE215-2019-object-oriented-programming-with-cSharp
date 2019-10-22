@@ -22,7 +22,18 @@ namespace lecture_7_generic_specific_code
             {
                 System.Console.Write(i + " ");
             }
+        
             System.Console.WriteLine("\nDone");
+
+            Console.WriteLine("special yield return");
+
+            foreach (int i in SpecialPower(2, 8))
+            {
+                Console.Write("{0} ", i);
+            }
+
+
+
             Console.ReadLine();
         }
 
@@ -82,6 +93,17 @@ namespace lecture_7_generic_specific_code
                     yield return current.Data;
                     current = current.Next;
                 }
+            }
+        }
+
+        public static IEnumerable<int> SpecialPower(int number, int exponent)
+        {
+            int result = 1;
+
+            for (int i = 0; i < exponent; i++)
+            {
+                result = result * number;
+                yield return result;
             }
         }
     }
