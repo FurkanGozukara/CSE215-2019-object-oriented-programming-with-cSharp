@@ -97,7 +97,7 @@ namespace lecture_10
             nc += new NumberChanger(MultNum);
             MessageBox.Show(getNum().ToString());
             nc(5);
-              MessageBox.Show(getNum().ToString());
+            MessageBox.Show(getNum().ToString());
         }
 
 
@@ -108,11 +108,11 @@ namespace lecture_10
             Action doWorkAction = new Action(DoWork);
             doWorkAction(); //Print "Hi, I am doing work."
             Action<int> firstAction = DoWorkWithOneParameter;
-            Action<int, int> secondAction = DoWorkWithTwoParameters;
+            Action<int, int,int> secondAction = DoWorkWithTwoParameters;
             Action<int, int, int> thirdAction = DoWorkWithThreeParameters;
 
             firstAction(1); // Print 1
-            secondAction(1, 2); // Print 1-2
+            secondAction(1, 2,0); // Print 1-2
             thirdAction(1, 2, 3); //Print 1-2-3
 
 
@@ -128,18 +128,43 @@ namespace lecture_10
 
             Action<int, int> actWithTwoParameter = (arg1, arg2) =>
             {
-                Debug.WriteLine("Par1: " + arg1 + ", Par2: " + arg2);
+             
+                    Debug.WriteLine("Par: " + arg1, "Par: " + arg2);
+          
+
             };
 
 
 
             act();
             actWithOneParameter(1);
-            actWithTwoParameter(1, 2);
+             actWithTwoParameter(1, 2);
+
+
+            Task.Factory.StartNew((Action)(() =>
+            {
+                secondAction(33, 11,2000);
+            }));
+
+            Task.Factory.StartNew((Action)(() =>
+            {
+                secondAction(377, 456,6000);
+            }));
+
+            Task.Factory.StartNew((Action)(() =>
+            {
+                secondAction(11, 77,10000);
+            }));
+
+            MessageBox.Show("gg");
 
             this.Dispatcher.BeginInvoke(
-                   actWithTwoParameter,new [] { 66,77,55});
+        secondAction, new object[] { 88, 99 ,0});
+
+       
         }
+
+
 
         static Int64 irNum;
 
@@ -153,9 +178,11 @@ namespace lecture_10
             Debug.WriteLine(arg);
         }
 
-        public static void DoWorkWithTwoParameters(int arg1, int arg2)
+        public static void DoWorkWithTwoParameters(int arg1, int arg2, int irWait = 0)
         {
+            System.Threading.Thread.Sleep(irWait);
             Debug.WriteLine(arg1 + "-" + arg2);
+       
         }
 
         public static void DoWorkWithThreeParameters(int arg1, int arg2, int arg3)
