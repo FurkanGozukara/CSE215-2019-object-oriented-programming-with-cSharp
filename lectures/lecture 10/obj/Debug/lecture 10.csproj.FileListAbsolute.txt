@@ -1,0 +1,15 @@
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\bin\Debug\lecture 10.exe.config
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\bin\Debug\lecture 10.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\bin\Debug\lecture 10.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\lecture 10.csprojAssemblyReference.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\MainWindow.g.cs
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\App.g.cs
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\lecture 10_MarkupCompile.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\lecture 10_MarkupCompile.lref
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\MainWindow.baml
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\lecture 10.g.resources
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\lecture_10.Properties.Resources.resources
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\lecture 10.csproj.GenerateResource.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\lecture 10.csproj.CoreCompileInputs.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\lecture 10.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\obj\Debug\lecture 10.pdb
