@@ -26,7 +26,7 @@ namespace lecture_10
             TaskScheduler.UnobservedTaskException += new EventHandler<UnobservedTaskExceptionEventArgs>(Application_DispatcherUnhandledException2);
         }
 
-        private static void writeMessage(Exception e)
+        private static void writeMessage(Exception e, string srWhichHandle)
         {
             //.? means null check. if not null
             //string srMsg;
@@ -45,7 +45,7 @@ namespace lecture_10
                 srMsg = e.Message + "\r\n\r\nStack\r\n" + e.StackTrace;
             }
 
-            srMsg += "\r\n\r\n*********\r\n\r\n";
+            srMsg += $"\r\n\r\n****{srWhichHandle}*****\r\n\r\n";
 
             File.AppendAllText("global_errors.txt", srMsg);
 
@@ -53,18 +53,18 @@ namespace lecture_10
 
         private static void Application_DispatcherUnhandledException2(object o, UnobservedTaskExceptionEventArgs e)
         {
-            writeMessage(e.Exception);
+            writeMessage(e.Exception, "UnobservedTaskException");
         }
 
         private static void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            writeMessage(e.Exception);
+            writeMessage(e.Exception, "DispatcherUnhandledExceptionEventHandler");
         }
 
         private static void MyHandler(object sender, UnhandledExceptionEventArgs args)
         {
             Exception e = (Exception)args.ExceptionObject;
-            writeMessage(e);
+            writeMessage(e, "UnhandledExceptionEventHandler");
         }
     }
 }

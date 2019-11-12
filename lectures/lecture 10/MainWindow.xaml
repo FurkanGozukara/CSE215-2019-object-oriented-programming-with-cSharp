@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="trigger error in main thread" HorizontalAlignment="Left" Margin="36,27,0,0" VerticalAlignment="Top" Width="194" Height="43" Click="Button_Click"/>
+        <Button Content="trigger error in a sub task thread" HorizontalAlignment="Left" Margin="36,105,0,0" VerticalAlignment="Top" Width="194" Height="53" Click="Button_Click_1"/>
+        <Button Content="trigger error in a main dispatcher" HorizontalAlignment="Left" Margin="260,27,0,0" VerticalAlignment="Top" Width="194" Height="53" Click="Button_Click_2" />
+        <Button Content="main thread blocking example" HorizontalAlignment="Left" Margin="260,105,0,0" VerticalAlignment="Top" Width="194" Height="53" Click="Button_Click_3"/>
+        <Button Content="main thread non-blocking example" HorizontalAlignment="Left" Margin="480,105,0,0" VerticalAlignment="Top" Width="194" Height="53" Click="Button_Click_4"/>
+        <Label Name="lblNumbers" Content="Label" HorizontalAlignment="Left" Margin="36,172,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

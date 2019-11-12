@@ -1,0 +1,24 @@
+Input string was not in a correct format.
+
+Stack
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at lecture_10.MainWindow.<>c.<Button_Click_1>b__2_0() in C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\MainWindow.xaml.cs:line 37
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+
+****UnobservedTaskException*****
+
+Input string was not in a correct format.
+
+Stack
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at lecture_10.MainWindow.<>c.<Button_Click_1>b__2_0() in C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 10\MainWindow.xaml.cs:line 37
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+
+****UnobservedTaskException*****
+
