@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 //2019103004
 using custom_delagates;
 using static custom_delagates.delegateExample;
@@ -95,7 +97,70 @@ namespace lecture_10
             nc += new NumberChanger(MultNum);
             MessageBox.Show(getNum().ToString());
             nc(5);
-            MessageBox.Show(getNum().ToString());
+              MessageBox.Show(getNum().ToString());
+        }
+
+
+        //Action in C# represents a delegate that has void return type and optional parameters. There are two variants of Action delegate.
+        //http://dotnetpattern.com/csharp-action-delegate
+        private void what_is_action(object sender, RoutedEventArgs e)
+        {
+            Action doWorkAction = new Action(DoWork);
+            doWorkAction(); //Print "Hi, I am doing work."
+            Action<int> firstAction = DoWorkWithOneParameter;
+            Action<int, int> secondAction = DoWorkWithTwoParameters;
+            Action<int, int, int> thirdAction = DoWorkWithThreeParameters;
+
+            firstAction(1); // Print 1
+            secondAction(1, 2); // Print 1-2
+            thirdAction(1, 2, 3); //Print 1-2-3
+
+
+            Action act = () =>
+            {
+                Debug.WriteLine("No Parameter");
+            };
+
+            Action<int> actWithOneParameter = (arg1) =>
+            {
+                Debug.WriteLine("Par: " + arg1);
+            };
+
+            Action<int, int> actWithTwoParameter = (arg1, arg2) =>
+            {
+                Debug.WriteLine("Par1: " + arg1 + ", Par2: " + arg2);
+            };
+
+
+
+            act();
+            actWithOneParameter(1);
+            actWithTwoParameter(1, 2);
+
+            this.Dispatcher.BeginInvoke(
+                   actWithTwoParameter,new [] { 66,77,55});
+        }
+
+        static Int64 irNum;
+
+        public static void DoWork()
+        {
+            irNum++;
+        }
+
+        public static void DoWorkWithOneParameter(int arg)
+        {
+            Debug.WriteLine(arg);
+        }
+
+        public static void DoWorkWithTwoParameters(int arg1, int arg2)
+        {
+            Debug.WriteLine(arg1 + "-" + arg2);
+        }
+
+        public static void DoWorkWithThreeParameters(int arg1, int arg2, int arg3)
+        {
+            Debug.WriteLine(arg1 + "-" + arg2 + "-" + arg3);
         }
     }
 }

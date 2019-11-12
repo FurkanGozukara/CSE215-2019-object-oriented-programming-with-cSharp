@@ -15,6 +15,7 @@
         <Label Name="lblNumbers" Content="Label" HorizontalAlignment="Left" Margin="36,172,0,0" VerticalAlignment="Top"/>
         <Button Content="delegate example" HorizontalAlignment="Left" Margin="36,232,0,0" VerticalAlignment="Top" Width="194" Height="46" Click="delegate_example"/>
         <Button Content="multi cast delegate" HorizontalAlignment="Left" Margin="260,232,0,0" VerticalAlignment="Top" Width="153" Height="46" Click="multi_cast_delegate"/>
+        <Button Content="what is action in task" HorizontalAlignment="Left" Margin="433,232,0,0" VerticalAlignment="Top" Width="192" Height="46" Click="what_is_action"/>
 
     </Grid>
 </Window>
