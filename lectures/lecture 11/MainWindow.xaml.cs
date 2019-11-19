@@ -196,6 +196,7 @@ namespace lecture_11
         }
 
         //https://www.tutorialsteacher.com/csharp/csharp-interface
+        //2019103018
         interface IPen
         {
             string Color { get; set; }
@@ -203,7 +204,7 @@ namespace lecture_11
             bool Close();
             void Write(string text);
         }
-
+        //2019103018
         class Cello : IPen
         {
             public string Color { get; set; }
@@ -306,6 +307,7 @@ namespace lecture_11
 
         private void BtnInterface_Click(object sender, RoutedEventArgs e)
         {
+            //2019103018
             IPen pen1 = new Cello();
 
             IPen pen2 = new Parker();

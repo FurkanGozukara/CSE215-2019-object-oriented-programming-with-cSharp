@@ -1,0 +1,7 @@
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 11 console\bin\Debug\lecture 11 console.exe.config
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 11 console\bin\Debug\lecture 11 console.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 11 console\bin\Debug\lecture 11 console.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 11 console\obj\Debug\lecture 11 console.csprojAssemblyReference.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 11 console\obj\Debug\lecture 11 console.csproj.CoreCompileInputs.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 11 console\obj\Debug\lecture 11 console.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 11 console\obj\Debug\lecture 11 console.pdb
