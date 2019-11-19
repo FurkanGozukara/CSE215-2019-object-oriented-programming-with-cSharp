@@ -41,11 +41,40 @@ namespace lecture_11_console
             Console.WriteLine($"val 1.wp = {val1.wp}");
             Console.WriteLine($"val 2.wp = {val2.wp}");
 
-          
+            Console.Clear();
+
+            MyGenericClass<double> myDoubleClass = new MyGenericClass<double>(43);
+            myDoubleClass.genericMethod(myDoubleClass.genericProperty);
+
+            MyGenericClass<string> myStringClass = new MyGenericClass<string>("gg wp");
+            myStringClass.genericMethod(myStringClass.genericProperty);
+
+            addTwoEach2(new int[] { 1, 2, 3, 4, 5 });
+
+            addTwoEach(1, 2, 3, 4, 5 );
+
+            string myVal = "toros university";
+
+            string myKey = "b14ca5898a4e4133bbce2ea2315a1916";
+
+         var vrEncyrpttedText=   SymetricEncyrption.EncryptString(myKey, myVal);
+
+            Console.WriteLine($"{vrEncyrpttedText}");
+
+            var vrDecFalse = SymetricEncyrption.DecryptString("b15ca5898a4e4133bbce2ea2315a1916", vrEncyrpttedText);
+
+            Console.WriteLine($"{vrDecFalse}");
+
+            var vrTruedec = SymetricEncyrption.DecryptString(myKey, vrEncyrpttedText);
+
+            Console.WriteLine($"{vrTruedec}");
 
             Console.ReadLine();
         }
 
+ 
+
+        //https://www.tutorialsteacher.com/csharp/csharp-struct
         struct valType
         {
             public string wp;
@@ -74,6 +103,44 @@ namespace lecture_11_console
                  "street name",
                  new Tuple<string, string>("home office", "office home")
             );
+        }
+
+        //https://www.tutorialsteacher.com/csharp/csharp-generics
+        class MyGenericClass<T>
+        {
+            private T genericMemberVariable;
+
+            public MyGenericClass(T value)
+            {
+                genericMemberVariable = value;
+            }
+
+            public T genericMethod(T genericParameter)
+            {
+                Console.WriteLine("Parameter type: {0}, value: {1}", typeof(T).ToString(), genericParameter);
+                Console.WriteLine("Return type: {0}, value: {1}", typeof(T).ToString(), genericMemberVariable);
+
+                return genericMemberVariable;
+            }
+
+            public T genericProperty { get; set; }
+        }
+
+        //https://stackoverflow.com/questions/7580277/why-use-the-params-keyword
+        static public int addTwoEach(params int[] args)
+        {
+            int sum = 0;
+            foreach (var item in args)
+                sum += item + 2;
+            return sum;
+        }
+
+        static public int addTwoEach2(int[] args)
+        {
+            int sum = 0;
+            foreach (var item in args)
+                sum += item + 2;
+            return sum;
         }
     }
 }
