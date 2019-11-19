@@ -69,10 +69,31 @@ namespace lecture_11_console
 
             Console.WriteLine($"{vrTruedec}");
 
+            Chaining();
+            Chaining();
             Console.ReadLine();
         }
 
- 
+
+        public static event Action del;
+
+        public static void Chaining()
+        {
+            ggFirst aa = first;
+
+            aa.Invoke();
+             del += () => Console.WriteLine("Hello World");
+            del += () => Console.WriteLine("Good Things");
+            del += () => Console.WriteLine("Wonderful World");
+            del();
+        }
+
+        public delegate void ggFirst();
+
+        private static void first()
+        {
+            Console.WriteLine("first");
+        }
 
         //https://www.tutorialsteacher.com/csharp/csharp-struct
         struct valType
