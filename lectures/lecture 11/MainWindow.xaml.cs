@@ -57,7 +57,7 @@ namespace lecture_11
             {
                 updateText();
             }));
-            
+
         }
 
         // taking a class 
@@ -134,14 +134,14 @@ namespace lecture_11
             {
                 // using as operator 
                 string str1 = o[q] as string;
-    
+
                 Debug.WriteLine(o[q]?.ToString());
 
                 // checking for the result 
                 if (str1 != null)
                 {
                     Debug.WriteLine("'" + str1 + "'");
-                 
+
                 }
                 else
                 {
@@ -160,7 +160,7 @@ namespace lecture_11
 
             // automatic type conversion 
             float f = l;
-            
+
             // Display Result 
             Debug.WriteLine("Int value " + i);
             Debug.WriteLine("Long value " + l);
@@ -192,7 +192,152 @@ namespace lecture_11
             Debug.WriteLine(Convert.ToInt32(daa));
             Debug.WriteLine(Convert.ToUInt32(faa));
             Debug.WriteLine(Convert.ToDouble(ia));
-    
+
         }
+
+        //https://www.tutorialsteacher.com/csharp/csharp-interface
+        interface IPen
+        {
+            string Color { get; set; }
+            bool Open();
+            bool Close();
+            void Write(string text);
+        }
+
+        class Cello : IPen
+        {
+            public string Color { get; set; }
+
+            private bool isOpen = false;
+
+            public bool Close()
+            {
+                isOpen = false;
+                Debug.WriteLine("Cello closed for writing!");
+
+                return isOpen;
+            }
+
+            public bool Open()
+            {
+                isOpen = true;
+                Debug.WriteLine("Cello open for writing!");
+
+                return isOpen;
+            }
+
+            public void Write(string text)
+            {
+                //write text if open
+                if (isOpen)
+                    Debug.WriteLine("Cello: " + text);
+            }
+        }
+
+        class Parker : IPen
+        {
+            public string Color { get; set; }
+
+            private bool canWrite = false;
+
+            public bool Close()
+            {
+                canWrite = false;
+                Debug.WriteLine("Parker is closed now!");
+
+                return canWrite;
+            }
+
+            public bool Open()
+            {
+                canWrite = true;
+                Debug.WriteLine("Parker is open now!");
+
+                return canWrite;
+            }
+
+            public void Write(string text)
+            {
+                //write text if open
+                if (canWrite)
+                    Debug.WriteLine("Parker: " + text);
+            }
+        }
+
+        interface IBrandedPen
+        {
+            string GetBrandName();
+        }
+
+        class Parker2 : IPen, IBrandedPen
+        {
+            public string Color { get; set; }
+
+            public string GetBrandName()
+            {
+                return "Parker2";
+            }
+
+            private bool canWrite = false;
+
+            public bool Close()
+            {
+                canWrite = false;
+                Debug.WriteLine("Parker2 is closed now!");
+
+                return canWrite;
+            }
+
+            public bool Open()
+            {
+                canWrite = true;
+                Debug.WriteLine("Parker is open now!");
+
+                return canWrite;
+            }
+
+            public void Write(string text)
+            {
+                //write text if open
+                if (canWrite)
+                    Debug.WriteLine("Parker: " + text);
+            }
+        }
+
+        private void BtnInterface_Click(object sender, RoutedEventArgs e)
+        {
+            IPen pen1 = new Cello();
+
+            IPen pen2 = new Parker();
+
+            pen1.Open();
+            pen2.Open();
+
+            IPen pen3 = new Parker2();
+            //pen3.GetBrandName()//this gives error
+
+
+            Parker2 pen4 = new Parker2();
+            pen4.GetBrandName();//this works
+        }
+
+       // Example: Interface Inheritance
+//interface IPen
+//        {
+//            string Color { get; set; }
+//            bool Open();
+//            bool Close();
+//            void Write(string text);
+//        }
+
+//        interface IBrandedPen : IPen
+//        {
+//            string GetBrandName();
+//        }
+
+//        class Parker : IBrandedPen
+//        {
+//            //Implement all members of IPen and IBrandedPen
+//        }
     }
 }
