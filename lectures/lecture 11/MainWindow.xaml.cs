@@ -149,5 +149,50 @@ namespace lecture_11
                 }
             }
         }
+
+        //https://www.geeksforgeeks.org/c-sharp-type-casting/
+        private void BtnTypeCasting_Click(object sender, RoutedEventArgs e)
+        {
+            int i = 57;
+
+            // automatic type conversion implict
+            long l = i;
+
+            // automatic type conversion 
+            float f = l;
+            
+            // Display Result 
+            Debug.WriteLine("Int value " + i);
+            Debug.WriteLine("Long value " + l);
+            Debug.WriteLine("Float value " + f);
+
+            double d = 765.12;
+
+            // Incompatible Data Type 
+            //int i = d;//this gives error cannot implicty convert double to int
+
+            double gg = i;
+
+            double ga = 765.12;
+
+            // Explicit Type Casting 
+            int ii = (int)d;
+
+            // Display Result 
+            Console.WriteLine("Value of i is " + ii);
+
+
+            int ia = 12;
+            double daa = 765.12;
+            float faa = 56.123F;
+
+            // Using Built- In Type Conversion 
+            // Methods & Displaying Result 
+            Debug.WriteLine(Convert.ToString(faa));
+            Debug.WriteLine(Convert.ToInt32(daa));
+            Debug.WriteLine(Convert.ToUInt32(faa));
+            Debug.WriteLine(Convert.ToDouble(ia));
+    
+        }
     }
 }

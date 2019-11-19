@@ -13,6 +13,7 @@
         <Button x:Name="btnTaskStart" Content="task start" HorizontalAlignment="Left" Margin="285,27,0,0" VerticalAlignment="Top" Width="75" Click="BtnTaskStart_Click"/>
         <Button x:Name="btnIsOp" Content="is operator" HorizontalAlignment="Left" Margin="22,114,0,0" VerticalAlignment="Top" Width="96" Click="BtnIsOp_Click"/>
         <Button x:Name="btnasoper" Content="as operator" HorizontalAlignment="Left" Margin="148,114,0,0" VerticalAlignment="Top" Width="128" Click="Btnasoper_Click"/>
+        <Button x:Name="btnTypeCasting" Content="type casting" HorizontalAlignment="Left" Margin="309,114,0,0" VerticalAlignment="Top" Width="142" Click="BtnTypeCasting_Click"/>
 
     </Grid>
 </Window>
