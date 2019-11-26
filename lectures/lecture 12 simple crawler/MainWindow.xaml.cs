@@ -1,6 +1,7 @@
 ﻿using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -34,11 +35,16 @@ namespace lecture_12_simple_crawler
             startTimer();
         }
 
+        private static HashSet<string> hsCrawledLinks = new HashSet<string>();
+        private static HashSet<string> hsCrawlingLinks = new HashSet<string>();
+        private static HashSet<string> hstoBeCrawledLinks = new HashSet<string>();
+        private static int irMaxThreadCount = 10;
+
         private void startTimer()
         {
             System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += dispatcherTimer_Tick;
-            dispatcherTimer.Interval = new TimeSpan(0,0, 0, 0,250);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 250);
             dispatcherTimer.Start();
         }
 
@@ -55,6 +61,9 @@ namespace lecture_12_simple_crawler
 
         private static perDocument extractLinks(string srUrl)
         {
+            lock (swCrawling)
+                swCrawling.WriteLine(DateTime.Now + "\t" + srUrl);
+
             var baseUri = new Uri(srUrl);
             HtmlWeb web = new HtmlWeb();
             web.AutoDetectEncoding = true;
@@ -85,18 +94,112 @@ namespace lecture_12_simple_crawler
             return myDoc;
         }
 
+        static StreamWriter swTobeCrawled = new StreamWriter("tobecrawled.txt");
+        static StreamWriter swCrawling = new StreamWriter("crawling.txt");
+        static StreamWriter swCrawled = new StreamWriter("crawled.txt");
+
         private void BtnCrawlSingle_Click(object sender, RoutedEventArgs e)
         {
-            string srutl = txtUrl.Text; 
-            var task = Task.Factory.StartNew(new Action(() =>
+            swTobeCrawled.AutoFlush = true;
+            swCrawling.AutoFlush = true;
+            swCrawled.AutoFlush = true;
+
+            hstoBeCrawledLinks.Add(txtUrl.Text);
+
+            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += startNewCrawl;
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 50);
+            dispatcherTimer.Start();
+        }
+
+        List<Task> lstRunninTasks = new List<Task>();
+        private static bool blNewCrawl = false;
+
+
+
+        private void startNewCrawl(object sender, EventArgs e)
+        {
+            if (blNewCrawl == true)
+                return;
+            blNewCrawl = true;
+            lstRunninTasks = lstRunninTasks.Where(pr => pr.Status != TaskStatus.RanToCompletion && pr.Status!=TaskStatus.Faulted).ToList();
+
+            if (lstRunninTasks.Count >= irMaxThreadCount)
             {
-                startSingleCrawl(srutl);
-            }));
+                blNewCrawl = false;
+                return;
+            }
+             
+            string srNewCrawlUrl = "";
+            List<string> lstRemoveToCrawled = new List<string>();
+            //you have to lock all of the objects that will be shared between different threads
+            lock (hstoBeCrawledLinks)//this used to sync different threads
+                foreach (var vrTobeCrawl in hstoBeCrawledLinks)
+                {
+                    lock (hsCrawlingLinks)
+                        if (hsCrawlingLinks.Contains(vrTobeCrawl))
+                            continue;
+                    lock (hsCrawledLinks)
+                        if (hsCrawledLinks.Contains(vrTobeCrawl))
+                    {
+                        //hstoBeCrawledLinks.Remove(vrTobeCrawl);//i dont do that because this would break foreach loop -- you would get collection modified error
+                        lstRemoveToCrawled.Add(vrTobeCrawl);
+                        continue;
+                    }
+
+                    srNewCrawlUrl = vrTobeCrawl;
+                }
+
+            lock (hstoBeCrawledLinks)
+            {
+                foreach (var item in lstRemoveToCrawled)
+                {
+                    hstoBeCrawledLinks.Remove(item);
+                }
+            }
+
+            if(srNewCrawlUrl.Length>1)
+            {
+                var vrTask = Task.Factory.StartNew(() => {
+                    startSingleCrawl(srNewCrawlUrl);
+                });
+                lstRunninTasks.Add(vrTask);
+            }
+            blNewCrawl = false;
         }
 
         private void startSingleCrawl(string srurl)
         {
             var gg = extractLinks(srurl);
+
+            lock (hsCrawledLinks)
+                hsCrawledLinks.Add(srurl);
+            lock (hsCrawlingLinks)
+                hsCrawlingLinks.Remove(srurl);
+
+            lock(swCrawled)
+            {
+                swCrawled.WriteLine(DateTime.Now + "\t" + srurl);
+            }
+
+            lock(hstoBeCrawledLinks)
+            {
+                foreach (var item in gg.lstExtractedUrls)
+                {
+                    hstoBeCrawledLinks.Add(item);
+                }
+            }
+
+            lock(swTobeCrawled)
+            {
+                foreach (var item in gg.lstExtractedUrls)
+                {
+                    swTobeCrawled.WriteLine(DateTime.Now + "\t" + item);
+                }
+              
+            }
+
+            return;
 
             this.Dispatcher.BeginInvoke(new Action(() =>
             {
@@ -106,7 +209,7 @@ namespace lecture_12_simple_crawler
                 {
                     lstBoxFoundUrls.Items.Add(item);
                 }
-            }));        
+            }));
         }
     }
 }
