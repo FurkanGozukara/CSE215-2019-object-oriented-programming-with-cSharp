@@ -10,6 +10,7 @@
         <Button x:Name="btnCrawlSingle" Content="crawl given url" HorizontalAlignment="Left" Margin="536,10,0,0" VerticalAlignment="Top" Width="110" Click="BtnCrawlSingle_Click"/>
         <TextBox x:Name="txtUrl" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="https://www.toros.edu.tr" VerticalAlignment="Top" Width="505"/>
         <ListBox Name="lstBoxFoundUrls" HorizontalAlignment="Left" Height="332" Margin="10,58,0,0" VerticalAlignment="Top" Width="774"/>
+        <Label Name="lblTime" Content="Label" HorizontalAlignment="Left" Margin="651,7,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

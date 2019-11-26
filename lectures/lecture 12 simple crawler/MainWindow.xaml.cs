@@ -31,7 +31,20 @@ namespace lecture_12_simple_crawler
             ThreadPool.SetMaxThreads(100000, 100000);
             ThreadPool.SetMinThreads(100000, 100000);
             ServicePointManager.DefaultConnectionLimit = 1000;//this increases your number of connections to per host at the same time
+            startTimer();
+        }
 
+        private void startTimer()
+        {
+            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += dispatcherTimer_Tick;
+            dispatcherTimer.Interval = new TimeSpan(0,0, 0, 0,250);
+            dispatcherTimer.Start();
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            lblTime.Content = DateTime.Now.TimeOfDay;
         }
 
         public class perDocument
@@ -74,14 +87,26 @@ namespace lecture_12_simple_crawler
 
         private void BtnCrawlSingle_Click(object sender, RoutedEventArgs e)
         {
-            var gg = extractLinks(txtUrl.Text);
-
-            lstBoxFoundUrls.Items.Clear();
-            lstBoxFoundUrls.Items.Add(gg.srDocTitle);
-            foreach (var item in gg.lstExtractedUrls)
+            string srutl = txtUrl.Text; 
+            var task = Task.Factory.StartNew(new Action(() =>
             {
-                lstBoxFoundUrls.Items.Add(item);
-            }
+                startSingleCrawl(srutl);
+            }));
+        }
+
+        private void startSingleCrawl(string srurl)
+        {
+            var gg = extractLinks(srurl);
+
+            this.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                lstBoxFoundUrls.Items.Clear();
+                lstBoxFoundUrls.Items.Add(gg.srDocTitle);
+                foreach (var item in gg.lstExtractedUrls)
+                {
+                    lstBoxFoundUrls.Items.Add(item);
+                }
+            }));        
         }
     }
 }
