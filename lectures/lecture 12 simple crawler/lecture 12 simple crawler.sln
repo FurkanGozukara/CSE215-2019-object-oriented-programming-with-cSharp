@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lecture 12 simple crawler", "lecture 12 simple crawler.csproj", "{CEC62A74-8FE5-498D-AA9B-B93D03A54FDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEC62A74-8FE5-498D-AA9B-B93D03A54FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC62A74-8FE5-498D-AA9B-B93D03A54FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC62A74-8FE5-498D-AA9B-B93D03A54FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC62A74-8FE5-498D-AA9B-B93D03A54FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEB3B1C5-AA3A-47F0-AB45-F6F92BDEF4CD}
+	EndGlobalSection
+EndGlobal
