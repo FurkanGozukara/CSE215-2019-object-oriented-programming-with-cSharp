@@ -1,0 +1,7 @@
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 13 asyn await\bin\Debug\lecture 13 asyn await.exe.config
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 13 asyn await\bin\Debug\lecture 13 asyn await.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 13 asyn await\bin\Debug\lecture 13 asyn await.pdb
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 13 asyn await\obj\Debug\lecture 13 asyn await.csprojAssemblyReference.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 13 asyn await\obj\Debug\lecture 13 asyn await.csproj.CoreCompileInputs.cache
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 13 asyn await\obj\Debug\lecture 13 asyn await.exe
+C:\Users\Furkan Gözükara\Desktop\object oriented 2019\lectures\lecture 13 asyn await\obj\Debug\lecture 13 asyn await.pdb

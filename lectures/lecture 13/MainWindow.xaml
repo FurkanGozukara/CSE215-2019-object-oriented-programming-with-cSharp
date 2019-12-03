@@ -10,6 +10,9 @@
         <Button Name="btnModify" Content="modify value same time" HorizontalAlignment="Left" Margin="31,20,0,0" VerticalAlignment="Top" Width="153" Click="BtnModify_Click"/>
         <Button x:Name="btnPrint" Content="print to screen" HorizontalAlignment="Left" Margin="31,97,0,0" VerticalAlignment="Top" Width="153" Click="BtnPrint_Click"/>
         <Label Name="lblScreen" Content="Label" HorizontalAlignment="Left" Margin="31,156,0,0" VerticalAlignment="Top"/>
+        <Button Content="using example" Name="btnUsingExample" HorizontalAlignment="Left" Margin="31,205,0,0" VerticalAlignment="Top" Width="153" Click="BtnUsingExample_Click"/>
+        <Label Name="lbl2" Content="lbl" HorizontalAlignment="Left" Margin="31,246,0,0" VerticalAlignment="Top"/>
+        <Button Name="btnConqDic"  Content="concurrent dictionary" HorizontalAlignment="Left" Margin="31,309,0,0" VerticalAlignment="Top" Width="153" Click="BtnConqDic_Click"/>
 
     </Grid>
 </Window>
